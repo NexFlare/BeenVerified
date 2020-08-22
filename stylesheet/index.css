@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 header {
@@ -9,12 +10,16 @@ header {
 }
 
 .root-container {
-  max-width: 1200px;
+  max-width: 1000px;
   padding: 0 0.5rem;
 }
 
 .hor-center {
   margin: 0 auto;
+}
+
+.faic {
+  align-items: center;
 }
 
 nav {
@@ -100,7 +105,19 @@ input:focus {
   background: rgb(247, 192, 47);
   text-transform: uppercase;
   border: 0;
+  cursor: pointer;
   font-weight: bold;
+}
+.btn-grad {
+  background-image: linear-gradient(
+    to right,
+    #ffb347 0%,
+    #ffcc33 51%,
+    #ffb347 100%
+  );
+}
+.btn-grad:hover {
+  background-position: right center;
 }
 
 .search-input-container,
@@ -123,6 +140,11 @@ input:focus {
 
 .decleration > * + * {
   margin-left: 0.5rem;
+}
+
+.justify {
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .w {
