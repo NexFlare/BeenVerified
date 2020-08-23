@@ -1,10 +1,10 @@
-let emailBtn = document.querySelector("#emailBtn");
-let inputContainer = document.querySelector(".search-input-container");
-let inputFocus = function (e) {
+var emailBtn = document.querySelector("#emailBtn");
+var inputContainer = document.querySelector(".search-input-container");
+var inputFocus = function (e) {
   e.previousElementSibling.classList.add("focus");
 };
 
-let inputBlur = function (e) {
+var inputBlur = function (e) {
   if (!e.value.length) e.previousElementSibling.classList.remove("focus");
 };
 
