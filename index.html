@@ -54,9 +54,18 @@
           </div>
           <div class="search-container d-flex">
             <div class="search-input-container">
-              <input type="text" class="input-root" placeholder="EMAIL" />
+              <label class="search-input-label" id="emailLabel">EMAIL</label>
+              <input
+                type="email"
+                id="emailInput"
+                class="input-root"
+                onblur="inputBlur(this)"
+                onfocus="inputFocus(this)"
+              ></input>
             </div>
-            <button class="search-button-container b btn-grad">go!</button>
+            <button class="search-button-container b btn-grad" id="emailBtn">
+              go!
+            </button>
           </div>
 
           <div class="d-flex decleration">
@@ -156,5 +165,6 @@
         </div>
       </div>
     </main>
+    <script src="./js/index.js"></script>
   </body>
 </html>

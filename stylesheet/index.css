@@ -92,10 +92,31 @@ nav {
   flex: 1 1 45%;
   background: white;
   display: inline-flex;
+  position: relative;
   align-items: center;
   border-radius: 5px;
 }
 
+.search-input-label {
+  position: absolute;
+  font-size: 14px;
+  left: 0;
+  letter-spacing: 2px;
+  color: #726f6f;
+  transform: translate(14px, 0px) scale(1);
+  transition: all 0.3s ease;
+}
+
+.search-input-label.focus {
+  transform: translate(4px, -16px) scale(0.6);
+}
+
+.search-input-label.focus.error-label {
+  transform: translate(-42px, -16px) scale(0.6);
+}
+.error-label {
+  color: red;
+}
 input:focus {
   outline: orange;
 }
@@ -131,6 +152,7 @@ input:focus {
   padding: 18.5px 14px;
   box-sizing: content-box;
   width: 100%;
+  font-size: 1.2rem;
   height: 1.1876em;
 }
 
