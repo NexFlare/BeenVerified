@@ -28,7 +28,6 @@ nav {
 
 .d-flex {
   display: flex;
-  display: -webkit-flex;
   display: -ms-flexbox;
 }
 
@@ -193,6 +192,16 @@ input:focus {
 
 :-ms-input-placeholder {
   /* Internet Explorer 10-11 */
+  color: #535353;
+  letter-spacing: 2px;
+}
+
+::-moz-placeholder {
+  color: #535353;
+  letter-spacing: 2px;
+}
+
+::-ms-input-placeholder {
   color: #535353;
   letter-spacing: 2px;
 }
