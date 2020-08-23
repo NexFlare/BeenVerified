@@ -171,6 +171,10 @@ input:focus {
   cursor: pointer;
 }
 
+.condition-link {
+  padding: 0rem 5px;
+}
+
 .condition-detail {
   flex: 70%;
 }
