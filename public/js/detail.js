@@ -1,5 +1,4 @@
 (function render() {
-  console.log(window.screen.width);
   var mobileScreen = window.screen.width < 568 ? true : false;
   const urlParams = new URLSearchParams(window.location.search);
   const email = urlParams.get("email");
@@ -22,12 +21,7 @@
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-        console.log("the response is ", JSON.parse(this.responseText));
         renderDetail(JSON.parse(this.responseText));
-      }
-
-      if (this.readyState == 0) {
-        console.log("Nothing is happening");
       }
     };
 
@@ -109,7 +103,9 @@
 
   function renderDetail(details) {
     if (Array.isArray(details)) {
-      console.log("No results found");
+      var errorBlock = createElement("p", "tac sub-heading");
+      errorBlock.innerText = "Unable to find any results.";
+      pContainer.appendChild(errorBlock);
     } else {
       var pRootContainer = createElement("div", "d-flex p-container-root");
       if (!mobileScreen) {
@@ -130,5 +126,3 @@
 
   getDetail();
 })();
-
-console.log("HEllo world");
