@@ -1,4 +1,8 @@
 (function render() {
+  console.log(window.screen.width);
+  var mobileScreen = window.screen.width < 568 ? true : false;
+  const urlParams = new URLSearchParams(window.location.search);
+  const email = urlParams.get("email");
   var pContainer = document.querySelector(".p-container");
   var detailFragment = document.createDocumentFragment();
 
@@ -14,7 +18,7 @@
     if (src) element.src = src;
     return element;
   }
-  function getDetail(email) {
+  function getDetail() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
@@ -29,7 +33,7 @@
 
     xhttp.open(
       "GET",
-      "https://frozen-bastion-91456.herokuapp.com/https://ltv-data-api.herokuapp.com/api/v1/records.json?email=doesmith@example.com",
+      `https://frozen-bastion-91456.herokuapp.com/https://ltv-data-api.herokuapp.com/api/v1/records.json?email=${email}`,
       true
     );
     xhttp.send();
@@ -108,14 +112,17 @@
       console.log("No results found");
     } else {
       var pRootContainer = createElement("div", "d-flex p-container-root");
-      var imgContainer = createElement("div");
-      var circle = createElement("div", "circle bg-b y");
-      var pImage = createElement("img", "p-image");
-      pImage.src = "./assets/SVGs/icn_person.svg";
+      if (!mobileScreen) {
+        var imgContainer = createElement("div");
+        var circle = createElement("div", "circle bg-b y");
+        var pImage = createElement("img", "p-image");
+        pImage.src = "./assets/SVGs/icn_person.svg";
+
+        circle.appendChild(pImage);
+        imgContainer.appendChild(circle);
+        pRootContainer.appendChild(imgContainer);
+      }
       var detail = getDetailDOM(details);
-      circle.appendChild(pImage);
-      imgContainer.appendChild(circle);
-      pRootContainer.appendChild(imgContainer);
       pRootContainer.appendChild(detail);
       pContainer.appendChild(pRootContainer);
     }

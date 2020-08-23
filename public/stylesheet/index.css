@@ -59,7 +59,7 @@ nav {
 }
 
 .heading {
-  font-size: 3rem;
+  font-size: 2.85rem;
   font-weight: bold;
   font-family: "Raleway", sans-serif;
 }
@@ -182,6 +182,10 @@ input:focus {
 
 .b {
   color: rgb(1, 74, 128);
+}
+
+.gr {
+  color: #535353;
 }
 
 ::-webkit-input-placeholder {

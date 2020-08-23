@@ -16,11 +16,13 @@
       <div class="root-container hor-center">
         <ul class="nav-list d-flex">
           <li>
-            <img
+              <a href="/">
+                <img
               class="nav-link-icon"
               src="./assets/SVGs/Logo.svg"
-              alt="logo"
-            />
+              alt="logo"/>
+                </a>
+            
           </li>
           <li class="nav-right">
             <img
@@ -42,13 +44,54 @@
     <main>
       <div class="root-container hor-center">
         <div class="heading b tac main-heading">Result</div>
-        <p class="tac">
-          Look at the result below to see the deatils of the person you're
+        <p class="tac gr">
+          Look at the result below to see the details of the person you're
           searched for.
         </p>
         <div class="p-container card"></div>
       </div>
     </main>
+    <footer>
+        <div class="bg-b">
+            <div class="root-container hor-center">
+                <div class="header-detail">
+                  <div class="heading w tac">
+                    Can't Find Right Person ?
+                  </div>
+                  <div class="sub-heading tac">
+                    <span class="y">Try Again </span>
+                    <span class="w"
+                      >Make a new search</span
+                    >
+                  </div>
+                  <div class="search-container d-flex">
+                    <div class="search-input-container">
+                      <label class="search-input-label" id="emailLabel">EMAIL</label>
+                      <input
+                        type="email"
+                        id="emailInput"
+                        class="input-root"
+                        onblur="inputBlur(this)"
+                        onfocus="inputFocus(this)"
+                      ></input>
+                    </div>
+                    <button class="search-button-container b btn-grad" id="emailBtn">
+                      go!
+                    </button>
+                  </div>
+        
+                  <div class="d-flex decleration">
+                    <img src="./assets/SVGs/lock.svg" alt="lock" />
+                    <span class="y"
+                      >Enter Any Email Address. They won't be notified.</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </footer>
     <script src="./js/detail.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>
